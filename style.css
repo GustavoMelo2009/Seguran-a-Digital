@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+
+:root {
+    --branco: #ffffff;
+    --cor-de-fundo: #00162E;
+    --fundo-senha: #00244D;
+    --fundo-texto: #001E40;
+    --borda: #0075FF;
+    --vermelho: #E55757;
+    --amarelo: #F3C13A;
+    --verde: #2FC26D;
+    --roboto: 'Roboto', sans-serif;
+    --roboto-mono: 'Roboto Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    color: var(--branco);
+    background-color: var(--cor-de-fundo);
+    font-family: var(--roboto);
+    line-height: 1.5;
+}
+
+button, input {
+    font: inherit;
+}
+
+.conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.conteudo-titulo {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.conteudo-titulo img {
+    width: 64px;
+    display: block;
+    margin: 0 auto 24px;
+}
+
+.titulo-principal {
+    font-family: var(--roboto-mono);
+    font-size: 32px;
+}
+
+.titulo-secundario {
+    font-size: 20px;
+    color: #B6D2FF;
+    margin-top: 12px;
+}
+
+.conteudo-senha {
+    margin-top: 48px;
+    background: var(--fundo-senha);
+    padding: 24px;
+    border-bottom: 6px solid var(--borda);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.campo-senha-wrapper {
+    width: min(100%, 780px);
+}
+
+.campo-senha-wrapper label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #B6D2FF;
+}
+
+#campo-senha {
+    width: 100%;
+    background-color: var(--fundo-senha);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    color: var(--branco);
+    font-family: var(--roboto-mono);
+    font-size: 32px;
+    padding: 12px 16px;
+    border-radius: 12px;
+}
+
+#campo-senha:focus {
+    outline: none;
+    border-color: var(--borda);
+}
+
+.botao-copiar,
+.botao-gerar,
+.parametro-senha__botao {
+    background-color: var(--fundo-texto);
+    color: var(--branco);
+    border: 2px solid var(--borda);
+    border-radius: 12px;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.botao-copiar:hover,
+.botao-gerar:hover,
+.parametro-senha__botao:hover {
+    background-color: rgba(0, 117, 255, 0.16);
+    transform: translateY(-1px);
+}
+
+.parametro {
+    background-color: var(--fundo-texto);
+    border: 2px solid var(--borda);
+    margin-top: 32px;
+    padding: 24px;
+    border-radius: 20px;
+}
+
+.parametro-titulo {
+    font-family: var(--roboto-mono);
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+.parametro-coluna__senha {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.parametro-senha {
+    width: 100%;
+}
+
+.parametro-senha__titulo {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.parametro-senha-botoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.parametro-senha__botao {
+    min-width: 64px;
+    padding: 16px 20px;
+    font-size: 24px;
+}
+
+.parametro-senha__texto {
+    min-width: 72px;
+    text-align: center;
+    padding: 16px 20px;
+    border: 2px solid var(--borda);
+    border-radius: 12px;
+    margin: 0;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.caracteristicas label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.caracteristicas input {
+    margin-right: 10px;
+    accent-color: var(--borda);
+}
+
+.forca-container {
+    width: 100%;
+    height: 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.forca-barra {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: var(--amarelo);
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.forca-texto {
+    font-size: 18px;
+    color: #B6D2FF;
+}
+
+.botao-gerar {
+    margin-top: 24px;
+    width: 100%;
+    font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+    .conteudo-senha {
+        flex-wrap: nowrap;
+    }
+
+    .parametro-coluna__senha {
+        flex-direction: row;
+    }
+
+    .parametro-senha {
+        width: calc(33.333% - 16px);
+    }
+
+    .botao-gerar {
+        width: auto;
+        align-self: flex-start;
+    }
+}
