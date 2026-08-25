@@ -12,8 +12,8 @@ const checkNumeros = document.getElementById('check-numeros');
 const checkSimbolos = document.getElementById('check-simbolos');
 
 const limites = {
-    minimo: 4,
-    maximo: 32,
+    minimo: 6,
+    maximo: 20,
 };
 
 const caracteres = {
