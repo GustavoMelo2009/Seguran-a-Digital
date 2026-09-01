@@ -40,22 +40,37 @@ function selecionarCaracteres() {
 }
 
 function gerarSenha() {
-    const conjunto = selecionarCaracteres();
-    if (!conjunto) {
-        campoSenha.value = '';
-        alert('Selecione pelo menos uma característica da senha.');
-        return;
+    let senha = "";
+
+    if (checkMaiusculas.checked) {
+        senha += caracteres.maiusculas[
+            Math.floor(Math.random() * caracteres.maiusculas.length)
+        ];
     }
 
-    let senha = '';
-    for (let i = 0; i < comprimentoSenha; i++) {
-        const indice = Math.floor(Math.random() * conjunto.length);
-        senha += conjunto[indice];
+    if (checkMinusculas.checked) {
+        senha += caracteres.minusculas[
+            Math.floor(Math.random() * caracteres.minusculas.length)
+        ];
+    }
+
+    if (checkNumeros.checked) {
+        senha += caracteres.numeros[
+            Math.floor(Math.random() * caracteres.numeros.length)
+        ];
+    }
+
+    if (checkSimbolos.checked) {
+        senha += caracteres.simbolos[
+            Math.floor(Math.random() * caracteres.simbolos.length)
+        ];
     }
 
     campoSenha.value = senha;
-    atualizarForca();
+     atualizarForca();
 }
+   
+        
 
 function copiarSenha() {
     const senha = campoSenha.value;
