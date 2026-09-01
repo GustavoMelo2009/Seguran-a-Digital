@@ -66,6 +66,14 @@ function gerarSenha() {
         ];
     }
 
+    const conjunto = selecionarCaracteres();
+
+    for (let i = senha.length; i < comprimentoSenha; i++) {
+        senha += conjunto[
+            Math.floor(Math.random() * conjunto.length)
+        ];
+    }
+
     campoSenha.value = senha;
      atualizarForca();
 }
