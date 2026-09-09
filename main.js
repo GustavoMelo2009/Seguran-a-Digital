@@ -1,3 +1,9 @@
+/*
+INTEGRANTES:
+Gustavo Lazzari de Melo N17
+Henrique Lazzari de Melo N18
+TURMA: 3ª Série K
+*/
 const comprimentoTexto = document.getElementById('comprimento-texto');
 const campoSenha = document.getElementById('campo-senha');
 const botaoGerar = document.getElementById('btn-gerar');
